@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #292929;
+    font-family: 'Open Sans',sans-serif;
+}
+.field-group{
+    width: auto;
+}
+.file-field{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+}
+.file-label{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #229144;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.file-label figure{
+    width: 100px;
+    height: 120px;
+    position: relative;
+    background: #229144;
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.file-label figure::before,
+.file-label figure::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+}
+.file-label figure::before{
+    border-top: 20px solid #71f198;
+    border-left: 20px solid transparent;
+}
+.file-label figure::after{
+    border-bottom: 20px solid #175e2d;
+    border-right: 20px solid transparent;
+}
+.file-label i{
+    font-size: 2em;
+    color: #ffffff;
+}
+.file-field:focus + .file-label,
+.file-label:hover{
+    color: #0ac744;
+}
+.file-field:focus + .file-label figure,
+.file-label:hover figure{
+    background: #0ac744;
+}
+.file-field:focus + .file-label figure::after,
+.file-label:hover figure::after{
+    border-bottom-color: #229144;
+}
